@@ -1,55 +1,41 @@
 version: '3.5'
 
 services:
-  postgres:
-    container_name: postgres_container
+  postgres-customer:
+    container_name: postgres_customer_container
     image: postgres:16
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres-api-customer}
       PGDATA: /data/postgres
     volumes:
-      - postgres:/data/postgres
+      - postgres_customer:/data/postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
-      - postgres
+      - customer-network
     restart: unless-stopped
 
-  pgadmin:
-    container_name: pgadmin_container
+  pgadmin-customer:
+    container_name: pgadmin_customer_container
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@admin.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-      - pgadmin:/var/lib/pgadmin
+      - pgadmin_customer:/var/lib/pgadmin
     ports:
-      - "${PGADMIN_PORT:-5050}:80"
+      - "${PGADMIN_PORT:-5051}:80"
     networks:
-      - postgres
-    restart: unless-stopped
-
-  tech-challenge-fase-1:
-    container_name: poc-hexagonal-container
-    image: tech-challenge-fase-1
-    depends_on:
-      - postgres
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-postgres}
-      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
-      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
-    ports:
-      - "8080:8080"
-    networks:
-      - postgres
+      - customer-network
     restart: unless-stopped
 
 networks:
-  postgres:
+  customer-network:
     driver: bridge
 
 volumes:
-  postgres:
-  pgadmin:
+  postgres_customer:
+  pgadmin_customer:

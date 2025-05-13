@@ -8,10 +8,10 @@
         <relativePath/>
     </parent>
     <groupId>com.dequevedo</groupId>
-    <artifactId>poc-hexagonal-arch</artifactId>
+    <artifactId>customer-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>poc-hexagonal-arch</name>
-    <description>Project using Hexagonal Architecture</description>
+    <name>product-api</name>
+    <description>Microservice responsável por clientes</description>
 
     <properties>
         <java.version>21</java.version>
@@ -65,14 +65,10 @@
             <artifactId>flyway-core</artifactId>
             <version>10.20.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.mercadopago</groupId>
-            <artifactId>sdk-java</artifactId>
-            <version>2.1.29</version>
-        </dependency>
     </dependencies>
 
     <build>
+        <finalName>customer-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

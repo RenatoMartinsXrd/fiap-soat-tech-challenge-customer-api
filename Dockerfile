@@ -11,13 +11,13 @@ FROM amazoncorretto:21-al2023
 WORKDIR /app
 
 # Copia o JAR da etapa de build
-COPY --from=builder /app/target/poc-hexagonal-arch-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/customer-api.jar app.jar
 
 # Define variáveis de ambiente (opcional)
 ENV JAVA_OPTS=""
 
 # Expõe a porta padrão do Spring Boot
-EXPOSE 8080
+EXPOSE 8081
 
 # Comando para iniciar a aplicação
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
