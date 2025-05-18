@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/postgres-api-customer}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5434/postgres}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:changeme}
     driver-class-name: org.postgresql.Driver
@@ -19,16 +19,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  sql:
-    init:
-      continue-on-error: true
-      mode: always
-
-  flyway:
-    baselineOnMigrate: true
-    locations: classpath:db/migrations
-    undo-locations: classpath:db/undos
-
   messages:
     basename: messages
     encoding: UTF-8
@@ -42,3 +32,7 @@ management:
   endpoint:
     health:
       show-details: always
+
+external:
+  customer-api:
+    url: http://localhost:8080
