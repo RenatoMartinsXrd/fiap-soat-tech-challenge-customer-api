@@ -2,11 +2,10 @@
 # Tech Challenge - Customer API
 
 Microserviço responsável pela gestão dos clientes da lanchonete digital.
-Este repositório faz parte da solução maior descrita no repositório principal de documentação.
 
-**Observação:** Este repositório é parte de um sistema maior com outros microsserviços que interagem entre si, como o `Product API`, `Order API`, e `Payment API`. A integração entre os microsserviços é realizada através de chamadas HTTP REST.
+**Observação:** Este repositório é parte da solução de arquitetura de software para o desafio Tech Challenge da Fiap, com outros microsserviços que compõe o sistema da lanchonete.
 
-📚 Para mais detalhes sobre a solução e arquitetura completa, consulte nossa documentação [Repositório Overview](https://github.com/RenatoMartinsXrd/fiap-soat-tech-challenge-overview)
+📚 Para mais detalhes sobre a solução e arquitetura de software completa, consulte nossa documentação [Repositório Overview](https://github.com/RenatoMartinsXrd/fiap-soat-tech-challenge-overview)
 
 ---
 
