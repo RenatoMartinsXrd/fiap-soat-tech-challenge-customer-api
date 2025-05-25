@@ -37,7 +37,7 @@ Microserviço responsável pela gestão dos clientes da lanchonete digital.
    docker-compose up --build
    ```
 
-3. A API estará disponível em [http://localhost:8081](http://localhost:8081).
+3. A API estará disponível em [http://localhost:8080](http://localhost:8080).
 
 4. Caso precise acessar o banco de dados, pode usar o PGAdmin na porta [http://localhost:5051](http://localhost:5051).
 
@@ -47,7 +47,7 @@ Microserviço responsável pela gestão dos clientes da lanchonete digital.
 
 - A documentação da API pode ser acessada através do Swagger UI. Abra o seguinte URL no seu navegador:
   ```sh
-  http://localhost:8081/swagger-ui/index.html
+  http://localhost:8080/swagger-ui/index.html
   ```
 
 ---

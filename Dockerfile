@@ -17,7 +17,7 @@ COPY --from=builder /app/target/customer-api.jar app.jar
 ENV JAVA_OPTS=""
 
 # Expõe a porta padrão do Spring Boot
-EXPOSE 8081
+EXPOSE 8080
 
 # Comando para iniciar a aplicação
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
